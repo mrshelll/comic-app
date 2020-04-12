@@ -1,0 +1,14 @@
+<h1>Resultados: <small>{{ textoBusqueda }}</small></h1>
+<hr>
+
+<div class="row animated fadeIn fast" *ngIf="resultHeroes == null || resultHeroes.length == 0">
+  <div class="col-md-12">
+    <div class="alert alert-info" role="alert">
+      No se encontraron coincidencias con la búsqueda.
+    </div>
+  </div>
+</div>
+
+<div class="card-columns">
+  <app-heroe-tarjeta (heroeSeleccionado)="verHeroe( $event )" [heroe] = "h" *ngFor="let h of resultHeroes"></app-heroe-tarjeta>
+</div>
